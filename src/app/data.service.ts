@@ -8,6 +8,7 @@ import { RulesFile } from './models/rules_file';
 import { ToastService } from './toast.service';
 import { Router } from '@angular/router';
 import { SettingsService } from './settings/settings.service';
+import { Buffer } from 'buffer';
 
 @Injectable({
   providedIn: 'root'
@@ -39,9 +40,9 @@ export class DataService implements OnInit {
 
   loadFromUrl(url: string) {
     this.loading = true;
-    this.rules_file_url = url;
     this.http.get<RulesFile>(url).subscribe({
       next: (rf => {
+        this.rules_file_url = url;
         this.loading = false;
         this.statusService.updatePermissionsFor(rf);
         this.rules_file.next(rf);
@@ -63,10 +64,15 @@ export class DataService implements OnInit {
   }
 
   headers() {
+    console.log(this.settingsService.settings.cds_username);
+    console.log(this.settingsService.settings.cds_password);
+    
     let h = new HttpHeaders();
     h = h.set('Content-Type', 'application/json');
     h = h.set('Accept', 'application/json');
-    h = h.set('Authorization', 'Bearer ' + btoa(this.settingsService.settings.cds_username + ':' + this.settingsService.settings.cds_password));
+    const b64token = Buffer.from(this.settingsService.settings.cds_username + ':' + this.settingsService.settings.cds_password, 'binary').toString('base64');
+    h = h.set('Authorization', 'Basic ' + b64token);
+    // h = h.set('Authorization', 'Bearer ' + btoa(this.settingsService.settings.cds_username + ':' + this.settingsService.settings.cds_password));
     return h;
   }
 

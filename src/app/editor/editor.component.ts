@@ -15,6 +15,7 @@ import { ToasterComponent } from '../toaster/toaster.component';
 import { ToastComponent } from '../toast/toast.component';
 import { ToastService } from '../toast.service';
 import { FormsModule } from '@angular/forms';
+import { SettingsService } from '../settings/settings.service';
 // import { ToastService } from '../toast.service';
 
 @Component({
@@ -32,7 +33,7 @@ export class EditorComponent extends BaseComponent {
   public sidebarActive: boolean = true;
   public download_locked: boolean = false;
 
-  constructor(protected dataService: DataService, protected statusService: StatusService, protected toastService: ToastService, protected http: HttpClient, protected route: ActivatedRoute, protected router: Router) {
+  constructor(protected dataService: DataService, protected settingsService: SettingsService, protected statusService: StatusService, protected toastService: ToastService, protected http: HttpClient, protected route: ActivatedRoute, protected router: Router) {
     super();
   }
 
@@ -112,6 +113,7 @@ export class EditorComponent extends BaseComponent {
   }
 
   saveToServer() {
+    this.settingsService.reload();
     if (this.dataService.rules_file_url && this.rules_file) {
       this.dataService.save(this.dataService.rules_file_url, this.rules_file).subscribe({
         next: data => {
