@@ -1,6 +1,169 @@
-<div id="rule">
+<div *ngIf="rule" id="rule" class="container">
 
-    <h2>Basis</h2>
-    <h2>Labels</h2>
-    <h2>Code Sets</h2>
+    <h2><span [innerText]="rule.id"></span></h2>
+    <section>
+
+        <h4>Basis </h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-floating">
+                    <input class="form-control form-control-sm" name="rule_basis_system" type="text" required="true"
+                        [(ngModel)]="rule.basis.system" />
+                    <label for="rule_basis_system">System</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-floating">
+                    <input class="form-control form-control-sm" name="rule_basis_code" type="text" required="true"
+                        [(ngModel)]="rule.basis.code" />
+                    <label for="rule_basis_code">Code</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-floating">
+                    <input class="form-control form-control-sm" name="rule_basis_display" type="text" required="true"
+                        [(ngModel)]="rule.basis.display" />
+                    <label for="rule_basis_display">Display</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-4">
+        <h4>Labels <button class="btn btn-sm btn-success" (click)="createLabel()"><i class="bi bi-plus"></i></button>
+        </h4>
+        <div *ngIf="rule.labels">
+
+            <div *ngFor="let l of rule.labels; let i = index" class="row">
+                <!-- <div > -->
+                <div class="col-sm-3">
+                    <div class="form-floating">
+                        <input class="form-control form-control-sm" name="rule_system" type="text" required="true"
+                            [(ngModel)]="l.system" />
+                        <label for="rule_system">System</label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-floating">
+                        <input class="form-control form-control-sm" name="rule_code" type="text" required="true"
+                            [(ngModel)]="l.code" />
+                        <label for="rule_code">Code</label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-floating">
+                        <input class="form-control form-control-sm" name="rule_display" type="text" required="true"
+                            [(ngModel)]="l.display" />
+                        <label for="rule_display">Display</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="btn-group">
+                        <a class="btn btn-small btn-dark" (click)="deleteLabel(i)"><span class="bi bi-trash"></span></a>
+                        <a class="btn btn-small btn-dark" (click)="moveUp(l, rule.labels)"
+                            *ngIf="canMoveUp(l, rule.labels)"><span class="bi bi-chevron-up"></span></a>
+                        <a class="btn btn-small btn-dark disabled" *ngIf="!canMoveUp(l, rule.labels)"><span
+                                class="bi bi-chevron-up"></span></a>
+                        <a class="btn btn-small btn-dark disabled" *ngIf="!canMoveDown(l, rule.labels)"><span
+                                class="bi bi-chevron-down"></span></a>
+                        <a class="btn btn-small btn-dark" (click)="moveDown(l, rule.labels)"
+                            *ngIf="canMoveDown(l, rule.labels)"><span class="bi bi-chevron-down"></span></a>
+
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-4">
+
+        <div class="row">
+            <div class="col-sm-3">
+                <!-- <select *ngIf="selectedCodeSet" class="form-select form-select-sm" [(ngModel)]="selectedCodeSet.groupID">
+                <option *ngFor="let cs of rule.codeSets" [value]="cs.groupID"
+                    [selected]="selectedCodeSet && cs.groupID == selectedCodeSet.groupID">{{cs.groupID}}</option>
+            </select> -->
+                <h4>Code Groups <button class="btn btn-sm btn-success" (click)="createCodeSet()"><i
+                            class="bi bi-plus"></i></button>
+                </h4>
+                <!-- <ul> -->
+                <div class="row" *ngFor="let cs of rule.codeSets; let i = index" (click)="selectCodeSet(cs)">
+                    <div class="col-sm-6"><input class="form-control form-control-sm" type="text" required="true"
+                            [(ngModel)]="cs.groupID" [class.selected]="cs.groupID == selectedCodeSet?.groupID" /></div>
+                    <div class="col-sm-6">
+
+                        <div class="btn-group align-start">
+                            <a class="btn btn-small btn-default" (click)="deleteCodeSet(i)"><span
+                                    class="bi bi-trash"></span></a>
+                            <!-- <a class="btn btn-small btn-dark" (click)="duplicateCodeSet(cs)"><span
+                                    class="bi bi-files"></span></a> -->
+                            <a class="btn btn-small btn-dark" (click)="moveUp(cs, rule.codeSets)"
+                                *ngIf="canMoveUp(cs, rule.codeSets)"><span class="bi bi-chevron-up"></span></a>
+                            <a class="btn btn-small btn-dark disabled" *ngIf="!canMoveUp(cs, rule.codeSets)"><span
+                                    class="bi bi-chevron-up"></span></a>
+                            <a class="btn btn-small btn-dark" (click)="moveDown(cs, rule.codeSets)"
+                                *ngIf="canMoveDown(cs, rule.codeSets)"><span class="bi bi-chevron-down"></span></a>
+                            <a class="btn btn-small btn-dark disabled" *ngIf="!canMoveDown(cs, rule.codeSets)"><span
+                                    class="bi bi-chevron-down"></span></a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- </ul> -->
+            </div>
+            <div *ngIf="selectedCodeSet" class="col-sm-9">
+                <h6> <button class="btn btn-sm btn-success" (click)="createCode()"><i class="bi bi-plus"></i>
+                        Code</button> </h6>
+                <div *ngIf="selectedCodeSet.codes.length > 0">
+
+                    <div class="row">
+                        <div class="col-sm-3">System</div>
+                        <div class="col-sm-3">Code</div>
+                        <div class="col-sm-3">Confidence</div>
+                        <div class="col-sm-3"></div>
+                    </div>
+
+                    <div *ngFor="let c of selectedCodeSet.codes; let i = index" class="row">
+                        <div class="col-sm-3">
+                            <input class="form-control form-control-sm" type="text" required="true"
+                                [(ngModel)]="c.system" />
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-control form-control-sm" type="text" required="true"
+                                [(ngModel)]="c.code" />
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-control form-control-sm" type="number" step="0.1" required="true" min="0"
+                                max="1" [(ngModel)]="c.confidence" />
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="btn-group align-start">
+                                <a class="btn btn-small btn-default" (click)="deleteCode(i)"><span
+                                        class="bi bi-trash"></span></a>
+                                <a class="btn btn-small btn-dark" (click)="duplicateCode(c)"><span
+                                        class="bi bi-files"></span></a>
+                                <a class="btn btn-small btn-dark" (click)="moveUp(c, selectedCodeSet.codes)"
+                                    *ngIf="canMoveUp(c, selectedCodeSet.codes)"><span
+                                        class="bi bi-chevron-up"></span></a>
+                                <a class="btn btn-small btn-dark disabled"
+                                    *ngIf="!canMoveUp(c, selectedCodeSet.codes)"><span
+                                        class="bi bi-chevron-up"></span></a>
+                                <a class="btn btn-small btn-dark" (click)="moveDown(c, selectedCodeSet.codes)"
+                                    *ngIf="canMoveDown(c, selectedCodeSet.codes)"><span
+                                        class="bi bi-chevron-down"></span></a>
+                                <a class="btn btn-small btn-dark disabled"
+                                    *ngIf="!canMoveDown(c, selectedCodeSet.codes)"><span
+                                        class="bi bi-chevron-down"></span></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 </div>

@@ -35,13 +35,13 @@
                         <!-- <fieldset class="form-group"> -->
                         <ul class="list-unstyled" id="rules_list">
                             <!-- <li *ngFor="let w of rules_file.rules" (click)="selectRule(w)"> -->
-                            <li *ngFor="let r of rules_file.rules" [routerLink]="['rules', r.id]"
+                            <li *ngFor="let r of rules_file.rules" 
                                 [routerLinkActive]="'active'">
                                 <div *ngIf="statusService.editing">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <input class="form-control form-control-sm" type="text" required="true"
-                                                [(ngModel)]="r.id" />
+                                                [(ngModel)]="r.id" [routerLink]="['rules', r.id]"/>
 
                                         </div>
                                         <div class="col-sm-6">
@@ -75,7 +75,7 @@
                                         {{r.id}}
                                     </a>
                                 </div>
-                                <div class="ball" ><p [innerText]="r.codeSets.length"></p></div>
+                                <div class="ball ball_green" ><p [innerText]="r.codeSets.length"></p></div>
                             </li>
                         </ul>
                     </li>

@@ -28,15 +28,12 @@ import { FormsModule } from '@angular/forms';
 export class EditorComponent extends BaseComponent {
 
   public rules_file: RulesFile | null = null;
-  // workstream: Workstream | null = null;
-  // route_workstream_id: string | null = null;
 
   public sidebarActive: boolean = true;
   public download_locked: boolean = false;
 
   constructor(protected dataService: DataService, protected statusService: StatusService, protected toastService: ToastService, protected http: HttpClient, protected route: ActivatedRoute, protected router: Router) {
     super();
-    // this.route_workstream_id = this.route.snapshot.paramMap.get('workstream_id')!;
   }
 
   ruleForId(id: string): Rule | null {
@@ -56,14 +53,11 @@ export class EditorComponent extends BaseComponent {
         if (rf) {
           // When not null, the service has finished loading data
           this.rules_file = rf;
-          // if (dd.workstreams.length > 0) {
-          //   this.router.navigate(['/editor','rules',rf.rules[0].id]);
-          // }
           // this.toastService.showSuccessToast("Document Loaded", "Your rules file has been loaded.")
         } else if (this.dataService.loading) {
           // Do nothing as the data service is probably downloading something
         } else {
-          // Assume the dashboard was loaded with data context and we should force the open screen
+          // Assume the component was loaded with data context and we should force the open screen
           console.log("Editor forcing navigation to open component.");
           this.router.navigate(['/']);
         }
@@ -93,7 +87,7 @@ export class EditorComponent extends BaseComponent {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'dashboard.json';
+    a.download = 'rules.json';
     a.click();
     this.toastService.showSuccessToast("Document Downloaded", "File saved to your browser downloads folder.");
   }
@@ -105,22 +99,25 @@ export class EditorComponent extends BaseComponent {
   createRule() {
     let r = Rule.fromTemplate();
     this.rules_file?.rules.push(r);
+    this.router.navigate(['editor', 'rules', r.id]);
   }
 
   deleteRule(r: Rule) {
     // if (this.workstream?.id == w.id) {
-    if (this.route.snapshot.paramMap.get("rule_id") == r.id) {
-      this.router.navigate(['/editor']);
-      // this.workstream = null;
-    }
     let i = this.rules_file?.rules.indexOf(r, 0);
     if (i !== undefined && i > -1) {
       this.rules_file?.rules.splice(i, 1);
     }
+    if (this.route.snapshot.paramMap.get("id") == r.id) {
+      this.router.navigate(['/editor']);
+    }
   }
+
   duplicateRule(r: Rule) {
     const clone = JSON.parse(JSON.stringify(r));
     clone.id += '-copy';
     this.rules_file?.rules.push(clone);
+    this.router.navigate(['editor', 'rules', clone.id]);
   }
+
 }

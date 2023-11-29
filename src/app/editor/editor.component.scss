@@ -8,9 +8,9 @@ $sidebar_light: #111;
     background: url(/assets/images/textures/crossword.png) repeat center center fixed;
     // background-color: white;
 
-    // #editor_name_float {
-    //     margin: 10px;
-    // }
+    #name_float {
+        margin: 10px;
+    }
 
     h1 {
         padding: 10px;
@@ -29,32 +29,33 @@ $sidebar_light: #111;
     .ball {
         display: inline-block;
         cursor: pointer;
-        width: 10px;
-        height: 10px;
+        width: 30px;
+        height: 30px;
         position: absolute;
-        top: 8px;
+        top: 0px;
         right: 20px;
         // border: 1px solid #111;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0 -5px 15px inset rgba(0, 0, 0, .7), 0 4px 4px black;
     }
 
     .ball_green {
         background-color: rgba(0, 176, 20, .9);
-        border-radius: 5px;
-        box-shadow: 0 -2px 5px inset rgba(0, 0, 0, .5), 0 4px 4px black;
     }
 
 
     .ball_yellow {
         background-color: rgba(251, 217, 4, .9);
-        border-radius: 5px;
-        box-shadow: 0 -2px 5px inset rgba(0, 0, 0, .5), 0 4px 4px black;
+        // border-radius: 5px;
+        // box-shadow: 0 -2px 5px inset rgba(0, 0, 0, .5), 0 4px 4px black;
     }
 
 
     .ball_red {
         background-color: rgba(255, 140, 50, .9);
-        border-radius: 5px;
-        box-shadow: 0 -2px 5px inset rgba(0, 0, 0, .5), 0 4px 4px black;
+        // border-radius: 5px;
+        // box-shadow: 0 -2px 5px inset rgba(0, 0, 0, .5), 0 4px 4px black;
     }
 
     p {

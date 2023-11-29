@@ -95,7 +95,7 @@ export class OpenComponent implements OnInit {
       reader.readAsText(file);
       reader.onload = () => {
         // reading has finished
-        let parsed = JSON.parse(reader.result!.toString());
+        let parsed: RulesFile = Object.assign(new RulesFile(), JSON.parse(reader.result!.toString()));
         this.statusService.updatePermissionsFor(parsed);
         this.dataService.rules_file.next(parsed);
         // this.dataService.workstream = null;
