@@ -114,9 +114,34 @@
                 <!-- </ul> -->
             </div>
             <div *ngIf="selectedCodeSet" class="col-sm-9">
-                <h6> <button class="btn btn-sm btn-success" (click)="createCode()"><i class="bi bi-plus"></i>
-                        Code</button> </h6>
-                <div *ngIf="selectedCodeSet.codes.length > 0">
+                <h6>
+                    <button class="btn btn-sm btn-success" (click)="createCode()"><i class="bi bi-plus"></i>
+                        Code</button> &nbsp;
+                    <button class="btn btn-sm btn-success" [class.active]="showBulkImport" data-bs-toggle="button"
+                        (click)="toggleBulkImport()"><i class="bi bi-cart-plus"></i>
+                        Bulk Import</button>
+                </h6>
+
+                <div *ngIf="showBulkImport">
+                    <div class="form-floating">
+                        <input class="form-control form-control-sm" name="bulk_import_system" type="text"
+                            required="true" [(ngModel)]="bulkImportSystem" />
+                        <label for="bulk_import_system">Code System</label>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <textarea class="form-control form-control-sm" name="bulk_import_codes" required="true"
+                            [(ngModel)]="bulkImportCodes"></textarea>
+                        <label for="bulk_import_codes">Codes, Separated by Space or Newline</label>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input class="form-control form-control-sm" name="bulk_import_confidence" type="number" step="0.1"
+                            required="true" [(ngModel)]="bulkImportConfidence" />
+                        <label for="bulk_import_confidence">Confidence</label>
+                    </div>
+                    <button class="btn btn-sm btn-success mt-2" (click)="runBulkImport()"><i class="bi bi-play"></i>
+                        Run</button>
+                </div>
+                <div *ngIf="selectedCodeSet.codes.length > 0" >
 
                     <div class="row">
                         <div class="col-sm-3">System</div>

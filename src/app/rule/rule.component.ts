@@ -22,10 +22,15 @@ export class RuleComponent extends BaseComponent {
 
   rule: Rule | null = null;
   selectedCodeSet: CodeSet | null = null;
+  showBulkImport: boolean = false;
+  bulkImportSystem: string = '';
+  bulkImportCodes: string = '';
+  bulkImportConfidence: number = 1.0;
 
   constructor(private route: ActivatedRoute, protected http: HttpClient, protected dataService: DataService, protected statusService: StatusService) {
     super();
     console.log(RuleComponent.name + " initializing.");
+    this.resetBulkImport();
     this.route.paramMap.subscribe(pm => {
       let w_id = pm.get('id')!;
       this.loadRuleFor(w_id);
@@ -90,6 +95,30 @@ export class RuleComponent extends BaseComponent {
     if (i !== undefined && i > -1) {
       this.selectedCodeSet?.codes.splice(i, 1);
     }
+  }
+
+  toggleBulkImport() {
+    this.showBulkImport = !this.showBulkImport;
+  }
+
+  runBulkImport() {
+    const codes = this.bulkImportCodes.split(/\s/);
+    codes.forEach(n => {
+      if (n != '') {
+        let c = new CodeSetCoding()
+        c.system = this.bulkImportSystem;
+        c.code = n;
+        c.confidence = this.bulkImportConfidence;
+        this.selectedCodeSet?.codes.push(c);
+      }
+    });
+    this.resetBulkImport();
+  }
+
+  resetBulkImport() {
+    this.bulkImportSystem = '';
+    this.bulkImportCodes = '';
+    this.bulkImportConfidence = 1.0;
   }
 
 }
