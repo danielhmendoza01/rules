@@ -54,6 +54,11 @@ export class EditorComponent extends BaseComponent {
           // When not null, the service has finished loading data
           this.rules_file = rf;
           // this.toastService.showSuccessToast("Document Loaded", "Your rules file has been loaded.")
+          let rule_id = this.route.snapshot.paramMap.get('id');
+          if(!rule_id && this.rules_file.rules.length >0) {
+
+            this.router.navigate(['editor', 'rules', this.rules_file.rules[0].id]);
+          }
         } else if (this.dataService.loading) {
           // Do nothing as the data service is probably downloading something
         } else {

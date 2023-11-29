@@ -10,17 +10,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import * as uuid from 'uuid';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-open',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './open.component.html',
   styleUrl: './open.component.scss'
 })
 export class OpenComponent implements OnInit {
 
-  remoteUrl: string | null = null;
+  static DEFAULT_REMOTE_URL = 'https://cds-hooks.sandbox.asushares.com/data/sensitivity-rules.json';
+
+  remoteUrl: string = OpenComponent.DEFAULT_REMOTE_URL;
   originalContent: RulesFile | null = null;
   originalFileName: string | null = null;
 
@@ -58,6 +61,7 @@ export class OpenComponent implements OnInit {
   }
 
   loadRemoteFile(url: string) {
+
     let obs = this.dataService.loadFromUrl(url);
     // obs.subscribe((raw) => {
     //   console.log('Downloaded raw remote file from: ' + url);
@@ -66,7 +70,7 @@ export class OpenComponent implements OnInit {
   }
 
   reset() {
-    this.remoteUrl = null;
+    this.remoteUrl = OpenComponent.DEFAULT_REMOTE_URL;
     this.originalContent = null;
     this.originalFileName = null;
   }
