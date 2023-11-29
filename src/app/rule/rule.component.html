@@ -119,7 +119,9 @@
                         Code</button> &nbsp;
                     <button class="btn btn-sm btn-success" [class.active]="showBulkImport" data-bs-toggle="button"
                         (click)="toggleBulkImport()"><i class="bi bi-cart-plus"></i>
-                        Bulk Import</button>
+                        Bulk Import</button> &nbsp;
+                        <button class="btn btn-sm btn-success" (click)="deduplicateCodes(selectedCodeSet)"><i class="bi bi-x-circle"></i>
+                            Remove Duplicates</button> &nbsp;
                 </h6>
 
                 <div *ngIf="showBulkImport">
@@ -134,7 +136,7 @@
                         <label for="bulk_import_codes">Codes, Separated by Space or Newline</label>
                     </div>
                     <div class="form-floating mt-2">
-                        <input class="form-control form-control-sm" name="bulk_import_confidence" type="number" step="0.1"
+                        <input class="form-control form-control-sm" name="bulk_import_confidence" type="number" step="0.1" min="0" max="1"
                             required="true" [(ngModel)]="bulkImportConfidence" />
                         <label for="bulk_import_confidence">Confidence</label>
                     </div>

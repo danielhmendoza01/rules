@@ -116,9 +116,26 @@ export class RuleComponent extends BaseComponent {
   }
 
   resetBulkImport() {
+    this.showBulkImport = false;
     this.bulkImportSystem = '';
     this.bulkImportCodes = '';
     this.bulkImportConfidence = 1.0;
+  }
+
+  deduplicateCodes(cs: CodeSet) {
+    let found: CodeSetCoding[] = [];
+    let dupes: number[] = [];
+    cs.codes.forEach((n, i) => {
+      // let tmp = n.system + n.code;
+      if (found.some(f => { return f.system == n.system && f.code == n.code })) {
+        dupes.push(i);
+      }
+      found.push(n);
+    })
+    dupes.reverse();
+    dupes.forEach(i => {
+      cs.codes.splice(i, 1);
+    });
   }
 
 }
