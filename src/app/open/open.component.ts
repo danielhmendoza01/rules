@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { StatusService } from '../status.service';
 import { RulesFile } from '../models/rules_file';
 import { Rule } from '../models/rule';
@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-open',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './open.component.html',
   styleUrl: './open.component.scss'
 })

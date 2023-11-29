@@ -1,7 +1,10 @@
+// Author: Preston Lee
+
 import { Routes } from '@angular/router';
 import { OpenComponent } from './open/open.component';
 import { EditorComponent } from './editor/editor.component';
 import { RuleComponent } from './rule/rule.component';
+import { SettingsComponent } from './settings/settings.component';
 
 export const routes: Routes = [
     {
@@ -17,5 +20,9 @@ export const routes: Routes = [
                 component: RuleComponent
             }
         ]
+    },
+    {
+        path: 'settings',
+        component: SettingsComponent
     }
 ];

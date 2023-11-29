@@ -111,6 +111,18 @@ export class EditorComponent extends BaseComponent {
     this.router.navigate(['editor', 'rules', r.id]);
   }
 
+  saveToServer() {
+    if (this.dataService.rules_file_url && this.rules_file) {
+      this.dataService.save(this.dataService.rules_file_url, this.rules_file).subscribe({
+        next: data => {
+          this.toastService.showSuccessToast('File Saved', 'Successfully updated the server. Changes should be effective immediately.');
+        }, error: e => {
+          this.toastService.showErrorToast('Error Saving', 'File could not be saved to remote server. Try downloading it locally and posting it later?');
+        }
+      });
+    }
+  }
+
   deleteRule(r: Rule) {
     // if (this.workstream?.id == w.id) {
     let i = this.rules_file?.rules.indexOf(r, 0);
