@@ -1,0 +1,35 @@
+<div id="open" class="container-fluid mt-4" >
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <div id="logo"></div>
+            <div id="loader" class="" >
+                <form class="form">
+                    <h1><span class="bi bi-file-earmark"></span> Open a local file
+                    </h1>
+                    <div class="input-group">
+                        <!-- <span class="bi bi-file-earmark"></span> -->
+                        <input class="form-control" type="file" accept=".json" (change)="openFile($event)" />
+                    </div>
+                </form>
+                <br/>
+                <hr />
+                <br/>
+                <div>
+                    <h1><span class="bi bi-file-plus"></span> Or start from scratch</h1><button class="btn btn-lg btn-dark" (click)="createFromTemplate()"><span
+                            class="bi bi-plus"></span> Create a new rules files.</button>
+                </div>
+                <!-- <div class="text-center mb-6">
+                    <h1><span class="bi bi-cloud"></span> Load from URL</h1>
+                    <div class="row">
+                        <div class="col-sm-9 input-group">
+                            <input class="form-control" name="remote_url" type="text" [(ngModel)]="remoteUrl" placeholder="http://example.com/dashboard.json" />
+                            <button class="btn btn-outline-dark" (click)="loadRemoteUrl()">Load it!</button>
+                        </div>
+                        <div class="col-sm-12"><i>Works "inside the firewall"!</i></div>
+                    </div>
+                </div>
+                <hr /> -->
+            </div>
+        </div>
+    </div>
+</div>

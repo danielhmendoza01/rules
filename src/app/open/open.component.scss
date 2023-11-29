@@ -1,0 +1,18 @@
+#open {
+
+    #logo {
+        // margin: 20px auto 0;
+        // height: 200px;
+        // background: url(/assets/images/logos/main.png) no-repeat center center ;
+        // background-size: contain;
+    }
+}
+
+
+#loader {
+    padding: 40px;
+    background: url(/assets/images/textures/crossword.png) repeat center center fixed;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 1);
+    border-radius: 4px;
+    margin-top: 50px;
+}

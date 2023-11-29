@@ -1,0 +1,18 @@
+$green: rgba(78, 173, 91, 1);
+$yellow: rgba(219, 219, 21, 1);
+$red: rgba(220, 105, 20, 1);
+$green_gradient: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(78, 173, 91, .7) 80%, $green 100%);
+$yellow_gradient: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(219, 219, 28, 0.7) 80%, $yellow 100%);
+$red_gradient: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(200, 91, 40, .7) 80%, $red 100%);
+
+$drop_shadow: 0 20px 20px #000;
+
+.cell_green {
+    background-color: $green;
+}
+.cell_yellow {
+    background-color: $yellow;
+}
+.cell_red {
+    background-color: $red;
+}

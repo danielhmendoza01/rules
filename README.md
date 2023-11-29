@@ -1,27 +1,34 @@
-# Rules
+# ASU SHARES Rules Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+This project is used to manage clinical decision support (CDS) rule definitions used by [ASU SHARES](https://www.asushares.com) decision systems. The hosted copy is available [here](https://rules.sandbox.asushares.com).
 
-## Development server
+The project is written in TypeScript using [Angular](https://angular.io), [Bootstrap](https://getbootstrap.com/), and [SCSS](http://sass-lang.com) for custom CSS. `npm` is the package manager.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Building for Production
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To build a reusable image with [Docker](https://www.docker.com) and [nginx](http://nginx.org), use the included Dockerfile. For example:
 
-## Build
+```sh
+	docker build -t asushares/rules:latest . # though you probably want your own repo and tag strings :)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+	# or cross-platform
+	docker buildx build --platform linux/arm64/v8,linux/amd64 -t asushares/rules:latest . --push
+```
 
-## Running unit tests
+## Running a Pre-Built Image
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+On your local machine or container hosting environment:
 
-## Running end-to-end tests
+```sh
+	docker run -d -p 4200:80 --restart unless-stopped -e "CONSENT_BUILDER_DEFAULT_FHIR_URL=http://localhost:3000" asushares/rules:latest # or any official tag
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+# Attribution
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Preston Lee
+
+# License
+
+Apache 2.0
