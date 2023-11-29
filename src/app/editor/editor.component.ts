@@ -24,7 +24,7 @@ import { SettingsService } from '../settings/settings.service';
   imports: [CommonModule, ToasterComponent, ToastComponent, RouterModule, FormsModule],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.scss',
-  providers: [ToastService]
+  providers: [ToastService, ToastService]
 })
 export class EditorComponent extends BaseComponent {
 
@@ -113,15 +113,9 @@ export class EditorComponent extends BaseComponent {
   }
 
   saveToServer() {
-    this.settingsService.reload();
+    this.settingsService.reload(); // Seems to be necessary in case credentials haven't initialized from storage.
     if (this.dataService.rules_file_url && this.rules_file) {
-      this.dataService.save(this.dataService.rules_file_url, this.rules_file).subscribe({
-        next: data => {
-          this.toastService.showSuccessToast('File Saved', 'Successfully updated the server. Changes should be effective immediately.');
-        }, error: e => {
-          this.toastService.showErrorToast('Error Saving', 'File could not be saved to remote server. Try downloading it locally and posting it later?');
-        }
-      });
+      this.dataService.save(this.dataService.rules_file_url, this.rules_file);
     }
   }
 

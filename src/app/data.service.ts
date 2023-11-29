@@ -79,7 +79,13 @@ export class DataService implements OnInit {
   save(url: string, rf: RulesFile) {
     // if(this.rules_file_url) {
     let data = JSON.stringify(rf, null, "\t");
-    return this.http.post(url, data, { headers: this.headers() });
+    return this.http.post(url, data, { headers: this.headers() }).subscribe({
+      next: data => {
+        this.toastService.showSuccessToast('File Saved', 'Successfully updated the server. Changes should be effective immediately.');
+      }, error: e => {
+        this.toastService.showErrorToast('Error Saving', 'File could not be saved to remote server. Try downloading it locally and posting it later?');
+      }
+    });
     // } else 
   }
 
