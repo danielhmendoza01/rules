@@ -23,7 +23,11 @@ $sidebar_light: #111;
     #rules_list li {
         position: relative;
         margin: 0;
-        padding: 2px 10px;
+        // padding: 8px 10px;
+    }
+
+    .readonly_rule {
+        padding: 4px 10px;
     }
 
     .ball {

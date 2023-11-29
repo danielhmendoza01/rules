@@ -48,20 +48,20 @@
                                             <div class="btn-group align-start">
                                                 <a class="btn btn-small btn-default" (click)="deleteRule(r)"><span
                                                         class="bi bi-trash"></span></a>
-                                                <a class="btn btn-small btn-dark" (click)="duplicateRule(r)"><span
+                                                <a class="btn btn-small btn-dark-outline" (click)="duplicateRule(r)"><span
                                                         class="bi bi-files"></span></a>
-                                                <a class="btn btn-small btn-dark"
+                                                <a class="btn btn-small btn-dark-outline"
                                                     (click)="moveUp(r, rules_file.rules)"
                                                     *ngIf="canMoveUp(r, rules_file.rules)"><span
                                                         class="bi bi-chevron-up"></span></a>
-                                                <a class="btn btn-small btn-dark disabled"
+                                                <a class="btn btn-small btn-dark-outline disabled"
                                                     *ngIf="!canMoveUp(r, rules_file.rules)"><span
                                                         class="bi bi-chevron-up"></span></a>
-                                                <a class="btn btn-small btn-dark"
+                                                <a class="btn btn-small btn-dark-outline"
                                                     (click)="moveDown(r, rules_file.rules)"
                                                     *ngIf="canMoveDown(r, rules_file.rules)"><span
                                                         class="bi bi-chevron-down"></span></a>
-                                                <a class="btn btn-small btn-dark disabled"
+                                                <a class="btn btn-small btn-dark-outline disabled"
                                                     *ngIf="!canMoveDown(r, rules_file.rules)"><span
                                                         class="bi bi-chevron-down"></span></a>
 
@@ -69,7 +69,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div *ngIf="!statusService.editing">
+                                <div *ngIf="!statusService.editing" class="readonly_rule">
                                     <a role="button" [routerLink]="['/editor','rules', r.id]"
                                         [routerLinkActive]="'active'">
                                         {{r.id}}
