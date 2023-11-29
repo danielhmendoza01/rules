@@ -39,7 +39,8 @@ export class DataService implements OnInit {
         this.loading = false;
         this.statusService.updatePermissionsFor(rf);
         this.rules_file.next(rf);
-        this.toastService.showSuccessToast("File Loaded!", "Starting editor...");
+        this.toastService.showSuccessToast("File Loaded!", "Starting app...");
+        this.statusService.editing = false; // Seems reasonable
         this.router.navigate(['editor']);
       }),
       error: (e => {
