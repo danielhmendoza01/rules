@@ -40,7 +40,7 @@
                                 <div *ngIf="statusService.editing">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <input class="form-control form-control-sm" type="text" required="true"
+                                            <input class="form-control form-control-sm" type="text" required="true" [class.selected]="r.id == selectedRuleId()"
                                                 [(ngModel)]="r.id" [routerLink]="['rules', r.id]"/>
 
                                         </div>

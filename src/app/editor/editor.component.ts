@@ -55,7 +55,7 @@ export class EditorComponent extends BaseComponent {
           this.rules_file = rf;
           // this.toastService.showSuccessToast("Document Loaded", "Your rules file has been loaded.")
           let rule_id = this.route.snapshot.paramMap.get('id');
-          if(!rule_id && this.rules_file.rules.length >0) {
+          if (!rule_id && this.rules_file.rules.length > 0) {
 
             this.router.navigate(['editor', 'rules', this.rules_file.rules[0].id]);
           }
@@ -75,10 +75,14 @@ export class EditorComponent extends BaseComponent {
     console.log("Toggled sidebar to " + this.sidebarActive);
   }
 
-  // selectWorkstream(workstream: Workstream) {
-  //   this.workstream = workstream;
-  //   console.log("Workstream selected: " + this.workstream.name);
-  // }
+  selectedRuleId(): string | null {
+    let id = null;
+    if (this.route.snapshot.firstChild) {
+      id = this.route.snapshot.firstChild.paramMap.get('id');
+    }
+    // console.log(id);
+    return id;
+  }
 
 
 

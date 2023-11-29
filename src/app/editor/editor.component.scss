@@ -20,6 +20,11 @@ $sidebar_light: #111;
         // border-bottom: 1px solid #333;
     }
 
+    input.selected {
+        background-color: rgba(247, 249, 185, 0.9);
+        box-shadow: 0px 0px px rgba(246, 255, 0, 0.9);
+    }
+
     #rules_list li {
         position: relative;
         margin: 0;
