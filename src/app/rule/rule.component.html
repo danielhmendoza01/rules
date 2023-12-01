@@ -174,7 +174,7 @@
                                 [(ngModel)]="csvImportText"></textarea>
                             <label for="csv_import_text">Paste CSV in the format: system, code, confidence. One per line.</label>
                         </div>
-                        <div class="form-text"> Blank lines will be ignored, as will as any additional columns. Supported system URL are as follows:
+                        <div class="form-text"> Blank lines will be ignored, as well as any additional columns. Supported system URL are as follows:
                             <ul>
                                 <li *ngFor="let n of supportedCodeSystems">
                                     - {{n.name}}: {{n.system}}
