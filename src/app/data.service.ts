@@ -13,7 +13,7 @@ import { Buffer } from 'buffer';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService implements OnInit {
+export class DataService {
 
   public default_url: string | null = null;
   public rules_file_url: string | null = null;
@@ -33,9 +33,6 @@ export class DataService implements OnInit {
       console.log("No default data URL provided.");
     }
   }
-  ngOnInit(): void {
-  }
-
 
 
   loadFromUrl(url: string) {
@@ -59,7 +56,7 @@ export class DataService implements OnInit {
     // ?    return this.rules_file;
   }
 
-  savable() {
+  savable(): boolean {
     return !!this.rules_file_url;
   }
 

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { DataService } from '../data.service';
 import { StatusService } from '../status.service';
 import { BaseComponent } from '../base.component';
@@ -9,25 +9,45 @@ import { Rule } from '../models/rule';
 import { FormsModule } from '@angular/forms';
 import { CodeSet } from '../models/code_set';
 import { CodeSetCoding } from '../models/code_set_coding';
+import { ToastService } from '../toast.service';
+import { ToasterComponent } from '../toaster/toaster.component';
 
 @Component({
   selector: 'app-rule',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './rule.component.html',
-  styleUrl: './rule.component.scss'
+  styleUrl: './rule.component.scss', 
 })
-export class RuleComponent extends BaseComponent {
+export class RuleComponent extends BaseComponent{
 
 
   rule: Rule | null = null;
   selectedCodeSet: CodeSet | null = null;
   showBulkImport: boolean = false;
+  showCsvImport: boolean = false;
+  csvImportText: string = '';
   bulkImportSystem: string = '';
   bulkImportCodes: string = '';
   bulkImportConfidence: number = 1.0;
 
-  constructor(private route: ActivatedRoute, protected http: HttpClient, protected dataService: DataService, protected statusService: StatusService) {
+  supportedCodeSystems: { name: string, system: string }[] = [
+    { name: 'SNOMED CT', system: 'http://snomed.info/sct' },
+    { name: 'LOINC', system: 'http://loinc.org' },
+    { name: 'RxNorm', system: 'http://www.nlm.nih.gov/research/umls/rxnorm' }
+  ];
+
+  codeSystemUrlToName(url: string) {
+    let name: string | null = null;
+    this.supportedCodeSystems.forEach(n => {
+      if (n.system == url) {
+        name = n.name;
+      }
+    });
+    return name;
+  }
+
+  constructor(private route: ActivatedRoute, protected http: HttpClient, public dataService: DataService, public statusService: StatusService, public toastService: ToastService) {
     super();
     console.log(RuleComponent.name + " initializing.");
     this.resetBulkImport();
@@ -35,7 +55,10 @@ export class RuleComponent extends BaseComponent {
       let w_id = pm.get('id')!;
       this.loadRuleFor(w_id);
     });
+
+    // this.toastService.showInfoToast('DEBUG', 'Loaded RuleComponent');
   }
+
 
   loadRuleFor(id: string) {
     this.selectedCodeSet = null;
@@ -100,6 +123,9 @@ export class RuleComponent extends BaseComponent {
   toggleBulkImport() {
     this.showBulkImport = !this.showBulkImport;
   }
+  toggleCsvImport() {
+    this.showCsvImport = !this.showCsvImport;
+  }
 
   runBulkImport() {
     const codes = this.bulkImportCodes.split(/\s/);
@@ -112,7 +138,50 @@ export class RuleComponent extends BaseComponent {
         this.selectedCodeSet?.codes.push(c);
       }
     });
+    this.toastService.showSuccessToast('Import Completed', `${codes.length} codes have been added.`);
     this.resetBulkImport();
+  }
+
+  runCsvImport() {
+    const lines = this.csvImportText.split(/\n/)
+      .map(n => { return n.trim(); })
+      .filter(n => { return n.length > 0 });
+    let errorLines: number[] = [];
+    let codings: CodeSetCoding[] = [];
+    lines.forEach((l, index) => {
+      let [system, code, confidence]: string[] = l.split(',').map(n => { return n.trim() });
+      if (!system || !code || !confidence) {
+        console.log('CSV error at line ' + (index + 1));
+        errorLines.push(index + 1);
+        // try {
+        //   Number(confidence);
+        // } catch {
+        //   console.log('CSV "confidence" value is not a number at line ' + (index + 1));
+        //   good = false;
+        // }
+      } else {
+        let c = new CodeSetCoding();
+        c.system = system
+        c.code = code;
+        c.confidence = Number(confidence);
+        codings.push(c);
+      }
+    });
+    if (errorLines.length > 0) {
+      console.log(`Errors found in CSV text at lines ${errorLines.join(', ')}. Cancelling.`);
+      this.toastService.showWarningToast('CSV Errors', `Import cancelled due to CSV errors at lines ${errorLines.join(', ')}. Please fix them and try again.`);
+    } else {
+      codings.forEach(c => {
+        this.selectedCodeSet?.codes.push(c);
+      })
+      this.toastService.showSuccessToast('Import Completed', `${lines.length} codes have been added.`);
+      this.resetCsvImport();
+    }
+  }
+
+  resetCsvImport() {
+    this.showCsvImport = false;
+    this.csvImportText = '';
   }
 
   resetBulkImport() {

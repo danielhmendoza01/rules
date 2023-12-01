@@ -24,6 +24,11 @@ On your local machine or container hosting environment:
 	docker run -d -p 4200:80 --restart unless-stopped -e "CONSENT_BUILDER_DEFAULT_FHIR_URL=http://localhost:3000" asushares/rules:latest # or any official tag
 ```
 
+To auto-load a specific document, set the following environment variable:
+
+```sh
+export DEFAULT_RULES_FILE_URL=http://localhost:3000/data/sensitivity-rules.json
+```
 
 # Attribution
 

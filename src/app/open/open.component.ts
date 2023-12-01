@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import * as uuid from 'uuid';
 import { FormsModule } from '@angular/forms';
+import { ToastService } from '../toast.service';
 
 @Component({
   selector: 'app-open',
@@ -30,10 +31,13 @@ export class OpenComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public dataService: DataService, public statusService: StatusService
+    public dataService: DataService,
+    public statusService: StatusService,
+    public toastService: ToastService
   ) {
     console.log("OpenComponent has been initialized.");
     this.reset();
+    // this.toastService.showInfoToast('DEBUG', 'Loaded OpenComponent');
 
     // To always start with a new document.
     // this.createFromTemplate();

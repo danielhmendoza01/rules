@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [DataService, StatusService, ToastService]
+  providers: [ToastService, DataService, StatusService]
 })
 export class AppComponent {
   title = 'rules';

@@ -21,10 +21,10 @@ import { SettingsService } from '../settings/settings.service';
 @Component({
   selector: 'app-editor',
   standalone: true,
-  imports: [CommonModule, ToasterComponent, ToastComponent, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.scss',
-  providers: [ToastService, ToastService]
+  // providers: [ToastService]
 })
 export class EditorComponent extends BaseComponent {
 
@@ -35,6 +35,7 @@ export class EditorComponent extends BaseComponent {
 
   constructor(protected dataService: DataService, protected settingsService: SettingsService, protected statusService: StatusService, protected toastService: ToastService, protected http: HttpClient, protected route: ActivatedRoute, protected router: Router) {
     super();
+    // this.toastService.showInfoToast('DEBUG', 'Loaded EditorComponent');
   }
 
   ruleForId(id: string): Rule | null {

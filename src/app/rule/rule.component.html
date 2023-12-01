@@ -123,12 +123,29 @@
                         <button class="btn btn-sm btn-success" (click)="createCode()"><i class="bi bi-plus"></i>
                             Code</button> &nbsp;
                         <button class="btn btn-sm btn-success" [class.active]="showBulkImport" data-bs-toggle="button"
-                            (click)="toggleBulkImport()"><i class="bi bi-cart-plus"></i>
-                            Bulk Import</button> &nbsp;
+                            (click)="toggleBulkImport()"><i class="bi bi-card-list"></i>
+                            Code List Importer</button> &nbsp;
+
+                        <button class="btn btn-sm btn-success" [class.active]="showBulkImport" data-bs-toggle="button"
+                        (click)="toggleCsvImport()"><i class="bi bi-card-list"></i>
+                        CSV Importer</button> &nbsp;
                         <button class="btn btn-sm btn-success" (click)="deduplicateCodes(selectedCodeSet)"><i
                                 class="bi bi-x-circle"></i>
                             Remove Duplicates</button> &nbsp;
+
+
+
                     </h6>
+                    <!-- <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-plus-square"></i>Bulk Add
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Code List</a></li>
+                          <li><a class="dropdown-item" href="#">CSV</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div> -->
 
                     <div *ngIf="showBulkImport">
                         <div class="form-floating">
@@ -150,7 +167,25 @@
                         <button class="btn btn-sm btn-success mt-2" (click)="runBulkImport()"><i class="bi bi-play"></i>
                             Run</button>
                     </div>
-                    <div *ngIf="selectedCodeSet.codes.length > 0">
+
+                    <div *ngIf="showCsvImport">
+                        <div class="form-floating mt-2">
+                            <textarea class="form-control form-control-sm" name="csv_import_text" required="true"
+                                [(ngModel)]="csvImportText"></textarea>
+                            <label for="csv_import_text">Paste CSV in the format: system, code, confidence. One per line. Blank lines will be ignored, as will as any additional columns.</label>
+                        </div>
+                        <div class="form-text">Supported system URL are as follows:
+                            <ul>
+                                <li *ngFor="let n of supportedCodeSystems">
+                                    - {{n.name}}: {{n.system}}
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-sm btn-success mt-2" (click)="runCsvImport()"><i class="bi bi-play"></i>
+                            Run</button>
+                    </div>
+
+                    <div *ngIf="selectedCodeSet.codes.length > 0" class="mt-4">
 
                         <div class="row">
                             <div class="col-sm-3">System</div>
@@ -247,7 +282,7 @@
         <section class="mt-4">
 
             <h2>Code Groups </h2>
-            <div class="row mt-4"  *ngFor="let cs of rule.codeSets; let i = index">
+            <div class="row mt-4" *ngFor="let cs of rule.codeSets; let i = index">
                 <h4>{{cs.groupID}}</h4>
                 <table class="table table-striped m-2">
                     <thead>
@@ -265,7 +300,7 @@
                         </tr>
                     </tbody>
                 </table>
-                
+
             </div>
 
         </section>

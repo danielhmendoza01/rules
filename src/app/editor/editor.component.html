@@ -114,7 +114,7 @@
                     </div>
                     <br>
                     <br>
-                    <button *ngIf="statusService.permissions.edit && statusService.editing" id="save_button"
+                    <button *ngIf="statusService.permissions.edit && statusService.editing && dataService.savable()" id="save_button"
                         class="btn btn-sm btn-dark" (click)="saveToServer()"><span
                             class="bi-cloud-upload"></span>&nbsp;Save to Server
                     </button>
@@ -148,11 +148,11 @@
                     <br />
                     <div class="btn-group">
 
-                        <button id="open_button" class="btn btn-sm btn-outline-dark" [routerLink]="['/']"><span
-                                class="bi-folder2-open"></span> Close Rules File..</button>
+                        <button id="open_button" class="btn btn-sm btn-dark" [routerLink]="['/']"><span
+                                class="bi-folder2-open"></span> Close Rules File</button>
 
                     </div>
-                    <button class="btn btn-sm btn-outline-dark float-end" [routerLink]="['/settings']"><span
+                    <button class="btn btn-sm btn-dark float-end" [routerLink]="['/settings']"><span
                             class="bi bi-gear"></span></button>
 
                 </div>
