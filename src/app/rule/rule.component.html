@@ -172,9 +172,9 @@
                         <div class="form-floating mt-2">
                             <textarea class="form-control form-control-sm" name="csv_import_text" required="true"
                                 [(ngModel)]="csvImportText"></textarea>
-                            <label for="csv_import_text">Paste CSV in the format: system, code, confidence. One per line. Blank lines will be ignored, as will as any additional columns.</label>
+                            <label for="csv_import_text">Paste CSV in the format: system, code, confidence. One per line.</label>
                         </div>
-                        <div class="form-text">Supported system URL are as follows:
+                        <div class="form-text"> Blank lines will be ignored, as will as any additional columns. Supported system URL are as follows:
                             <ul>
                                 <li *ngFor="let n of supportedCodeSystems">
                                     - {{n.name}}: {{n.system}}
