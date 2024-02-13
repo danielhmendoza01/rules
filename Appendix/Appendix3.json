@@ -1,0 +1,208 @@
+{
+	"source": {
+		"label": "ASUSHARES",
+		"url": "https://www.asushares.com"
+	},
+	"extension": {
+		"decision": "CONSENT_PERMIT",
+		"obligations": [
+			{
+				"id": {
+					"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+					"code": "REDACT"
+				},
+				"parameters": {
+					"codes": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+							"code": "SUD",
+							"display": "substance abuse information sensitivity"
+						}
+					]
+				}
+			},
+			{
+				"id": {
+					"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+					"code": "REDACT"
+				},
+				"parameters": {
+					"codes": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+							"code": "SUD",
+							"display": "substance abuse information sensitivity"
+						}
+					]
+				}
+			},
+			{
+				"id": {
+					"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+					"code": "REDACT"
+				},
+				"parameters": {
+					"codes": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+							"code": "SUD",
+							"display": "substance abuse information sensitivity"
+						}
+					]
+				}
+			}
+		],
+		"content": {
+			"resourceType": "Bundle",
+			"id": "a7ec0781-01cf-46e1-9a58-a6e76fdca0d3",
+			"total": 3,
+			"entry": [
+				{
+					"resource": {
+						"resourceType": "FamilyMemberHistory",
+						"id": "203183",
+						"meta": {
+							"versionId": "1",
+							"lastUpdated": "2024-02-02T05:35:36.381+00:00",
+							"source": "#2xZTjMydd8Vn609N",
+							"security": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+									"code": "SUD",
+									"display": "substance abuse information sensitivity"
+								}
+							]
+						},
+						"status": "completed",
+						"patient": {
+							"reference": "Patient/203141"
+						},
+						"relationship": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+									"code": "FAMMEMB",
+									"display": "family member"
+								}
+							]
+						},
+						"condition": [
+							{
+								"code": {
+									"coding": [
+										{
+											"system": "http://snomed.info/sct",
+											"code": "15167005",
+											"display": "Alcohol abuse"
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"resource": {
+						"resourceType": "FamilyMemberHistory",
+						"id": "203182",
+						"meta": {
+							"versionId": "1",
+							"lastUpdated": "2024-02-02T05:35:36.381+00:00",
+							"source": "#2xZTjMydd8Vn609N",
+							"security": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+									"code": "SUD",
+									"display": "substance abuse information sensitivity"
+								}
+							]
+						},
+						"status": "completed",
+						"patient": {
+							"reference": "Patient/203141"
+						},
+						"relationship": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+									"code": "FAMMEMB",
+									"display": "family member"
+								}
+							]
+						},
+						"condition": [
+							{
+								"code": {
+									"coding": [
+										{
+											"system": "http://snomed.info/sct",
+											"code": "26416006",
+											"display": "Drug abuse"
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"resource": {
+						"resourceType": "Observation",
+						"id": "203165",
+						"meta": {
+							"versionId": "1",
+							"lastUpdated": "2024-02-02T05:35:36.381+00:00",
+							"source": "#2xZTjMydd8Vn609N",
+							"security": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+									"code": "SUD",
+									"display": "substance abuse information sensitivity"
+								}
+							]
+						},
+						"status": "final",
+						"category": [
+							{
+								"coding": [
+									{
+										"system": "http://terminology.hl7.org/CodeSystem/observation-category",
+										"code": "laboratory",
+										"display": "Laboratory"
+									}
+								]
+							}
+						],
+						"code": {
+							"coding": [
+								{
+									"system": "http://loinc.org",
+									"code": "19301-1",
+									"display": "Opiates screen method [Identifier] in Urine"
+								}
+							]
+						},
+						"subject": {
+							"reference": "Patient/203141"
+						},
+						"interpretation": [
+							{
+								"coding": [
+									{
+										"system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+										"code": "POS",
+										"display": "Positive"
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		"basedOn": ""
+	},
+	"summary": "CONSENT_PERMIT",
+	"detail": "There is a consent permitting this action.",
+	"indicator": "info"
+}
