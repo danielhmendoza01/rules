@@ -1,0 +1,117 @@
+{
+	"$schema": "../schemas/sensitivity-rules.schema.json",
+	"name": "ASU SHARES Rule Set",
+	"updated_at": "",
+	"settings": {
+		"editable": true
+	},
+	"rules": [
+		{
+			"id": "leap-rule-sud",
+			"basis": {
+				"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+				"code": "42CFRPart2",
+				"display": "42 CFR Part2"
+			},
+			"labels": [
+				{
+					"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+					"code": "SUD",
+					"display": "substance abuse information sensitivity"
+				}
+			],
+			"codeSets": [
+				{
+					"groupID": "Family history-Alcohol abuse",
+					"codes": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "15167005",
+							"confidence": 0.5
+						}
+					]
+				},
+				{
+					"groupID": "Family history-Drug abuse",
+					"codes": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "26416006",
+							"confidence": 0.5
+						}
+					]
+				},
+				{
+					"groupID": "Opiates screen, urine (positive)",
+					"codes": [
+						{
+							"system": "http://loinc.org",
+							"code": "19301-1",
+							"confidence": 1
+						}
+					]
+				},
+				{
+					"groupID": "HEDIS 2018 Value Set - Alcohol Screening",
+					"codes": [
+						{
+							"system": "http://loinc.org",
+							"code": "LP263718-1",
+							"confidence": 0.5
+						}
+					]
+				},
+				{
+					"groupID": "Methadone [Presence] in Urine by Screen method",
+					"codes": [
+						{
+							"system": "http://loinc.org",
+							"code": "19550-3",
+							"confidence": 0.5
+						}
+					]
+				},
+				{
+					"groupID": "Methamphetamine intoxication",
+					"codes": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "12398571000119105",
+							"confidence": 1
+						}
+					]
+				},
+				{
+					"groupID": "Estazolam 1 mg oral tablet",
+					"codes": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "375982001",
+							"confidence": 0.75
+						}
+					]
+				},
+				{
+					"groupID": "Hydrocodone bitartrate 5 mg and paracetamol 325 mg oral tablet",
+					"codes": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "377286005",
+							"confidence": 0.75
+						}
+					]
+				},
+				{
+					"groupID": "Morphine",
+					"codes": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "373529000",
+							"confidence": 0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

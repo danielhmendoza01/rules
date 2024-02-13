@@ -1,0 +1,1620 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13",
+            "request": {
+                "method": "POST",
+                "url": "Patient"
+            },
+            "resource": {
+                "resourceType": "Patient",
+                "id": "cfsb1706046478276",
+                "birthDate": "1993-07-07",
+                "gender": "male",
+                "name": [
+                    {
+                        "given": [
+                            "Greg"
+                        ],
+                        "family": "Gates72"
+                    }
+                ],
+                "maritalStatus": {
+                    "coding": [
+                        {
+                            "code": "U",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+                            "display": "unmarried"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:5fa3a38f-9c54-4cd1-9bf4-b012cf2a3eac",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939683913",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "21897009",
+                            "system": "http://snomed.info/sct",
+                            "display": "Generalised anxiety disorder"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:19d0fdf8-65ed-4c6b-843d-e24401b6b163",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939724327",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "47505003",
+                            "system": "http://snomed.info/sct",
+                            "display": "Post-traumatic stress disorder"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:5a0e2766-0f98-493b-b058-51d8147ec991",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939759734",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "20010003",
+                            "system": "http://snomed.info/sct",
+                            "display": "Borderline personality disorder"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:d125b55d-7bc9-4690-b5e6-f974120c6460",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939784484",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "35489007",
+                            "system": "http://snomed.info/sct",
+                            "display": "Depression"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:862f7337-01d5-4612-9128-3eb94f5d4d66",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939807589",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "371631005",
+                            "system": "http://snomed.info/sct",
+                            "display": "Panic disorder"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:b8c12e55-a75a-4999-ba64-dee0de6fe159",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939836766",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "414916001",
+                            "system": "http://snomed.info/sct",
+                            "display": "Obesity"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:b63f685c-6aee-42a3-abc4-f21778d02d4f",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939864561",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "124171000119105",
+                            "system": "http://snomed.info/sct",
+                            "display": "Chronic intractable migraine without aura"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:3fb03bfc-e3a0-483c-b00c-05a2ac2bbfc5",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702939997014",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "62315008",
+                            "system": "http://snomed.info/sct",
+                            "display": "Diarrhoea"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:7308c54f-b4c7-4290-937f-1079e7a4b105",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702940029072",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "83132003",
+                            "system": "http://snomed.info/sct",
+                            "display": "Upper abdominal pain"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e94b5a7d-1b14-4256-8327-4c25223a1115",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702940056331",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "263171005",
+                            "system": "http://snomed.info/sct",
+                            "display": "Fractured nasal bones"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "resolved",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Resolved"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:fb4285f3-22b8-4cc1-beda-f7eff1c96d87",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702940104698",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "102616008",
+                            "system": "http://snomed.info/sct",
+                            "display": "Pain in mouth"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "resolved",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Resolved"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:84185c44-4a2a-42c2-af68-9c1ec998094b",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702940129481",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "125668004",
+                            "system": "http://snomed.info/sct",
+                            "display": "Contusion of face"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "resolved",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Resolved"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:43cc8e16-27ab-4307-ac64-53b4ff2a7702",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702940321410",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "283158001",
+                            "system": "http://snomed.info/sct",
+                            "display": "Metal foreign body in forearm"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "resolved",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Resolved"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:505b8ba5-1764-4e64-a205-4eaa4072e8b6",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702940447626",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "704022007",
+                            "system": "http://snomed.info/sct",
+                            "display": "Closed fracture of shaft of fourth metacarpal bone"
+                        }
+                    ],
+                    "text": "Displaced oblique fracture fourth metacarpal"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "resolved",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Resolved"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:164fc22b-4aa4-4818-9f55-1e89480f2baf",
+            "request": {
+                "method": "POST",
+                "url": "AllergyIntolerance"
+            },
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "cfsb1702954435912",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "24202000",
+                            "system": "http://snomed.info/sct",
+                            "display": "Ranitidine hydrochloride"
+                        }
+                    ]
+                },
+                "type": {
+                    "coding": [
+                        {
+                            "code": "allergy",
+                            "system": "http://hl7.org/fhir/allergy-intolerance-type",
+                            "display": "Allergy"
+                        }
+                    ]
+                },
+                "criticality": "high",
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                },
+                "reaction": [
+                    {
+                        "manifestation": [
+                            {
+                                "concept": {
+                                    "coding": [
+                                        {
+                                            "code": "39579001",
+                                            "system": "http://snomed.info/sct",
+                                            "display": "Anaphylaxis"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:6166ffd7-7ecb-4f7e-8d56-3b95e9740ddc",
+            "request": {
+                "method": "POST",
+                "url": "AllergyIntolerance"
+            },
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "cfsb1702954576770",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "387137007",
+                            "system": "http://snomed.info/sct",
+                            "display": "Omeprazole"
+                        }
+                    ]
+                },
+                "reaction": [
+                    {
+                        "manifestation": [
+                            {
+                                "concept": {
+                                    "coding": [
+                                        {
+                                            "code": "39579001",
+                                            "system": "http://snomed.info/sct",
+                                            "display": "Anaphylaxis"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "criticality": "high"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e9575dff-f9ea-4daa-9c90-8a18f34c7467",
+            "request": {
+                "method": "POST",
+                "url": "AllergyIntolerance"
+            },
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "cfsb1702955054668",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "373529000",
+                            "system": "http://snomed.info/sct",
+                            "display": "Morphine"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:c934358a-e7ec-4f39-8dc8-a6d765def7a7",
+            "request": {
+                "method": "POST",
+                "url": "AllergyIntolerance"
+            },
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "cfsb1702955167849",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "372767007",
+                            "system": "http://snomed.info/sct",
+                            "display": "Fluoxetine"
+                        }
+                    ]
+                },
+                "reaction": [
+                    {
+                        "manifestation": [
+                            {
+                                "concept": {
+                                    "coding": [
+                                        {
+                                            "code": "65124004",
+                                            "system": "http://snomed.info/sct",
+                                            "display": "Swelling"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:0f4a2fa7-29c3-4f2a-a022-575724523a8c",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702960594280",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "registered",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LA22875-1",
+                            "system": "http://loinc.org",
+                            "display": "Homosexual"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "social-history",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Social History"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:3149c7fc-3f8f-4f12-8a2c-3c3f39af16df",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702960838395",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "403180003",
+                            "system": "http://snomed.info/sct",
+                            "display": "Decorative tattoo"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:72096053-8e8e-4c22-abd8-d68b8758e554",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702960967631",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "registered",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP231636-4",
+                            "system": "http://loinc.org",
+                            "display": "Domestic violence"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:10477e89-b0cc-4fb4-8d68-b3a67aa2f8a1",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1702961171919",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "12398571000119105",
+                            "system": "http://snomed.info/sct",
+                            "display": "Methamphetamine intoxication"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:61d54a37-98a8-4956-8f16-e3d0bafafa2b",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702962270155",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP70338-6",
+                            "system": "http://loinc.org",
+                            "display": "Prolactin"
+                        }
+                    ]
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "H",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "High"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:9830c7a6-07d3-459d-ab9f-6546026039e9",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702962352667",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "19301-1",
+                            "system": "http://loinc.org",
+                            "display": "Opiates screen method [Identifier] in Urine"
+                        }
+                    ]
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "POS",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Positive"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:88ac6a8c-38c6-4c46-b448-1ea671e1b053",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702962457469",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP157729-7",
+                            "system": "http://loinc.org",
+                            "display": "Chlamydia trachomatis & Neisseria gonorrhoeae DNA"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ],
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "POS",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Positive"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:b00060f7-7ab3-4f24-9ca6-d84cf4bfd156",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702962619503",
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP268113-0",
+                            "system": "http://loinc.org",
+                            "display": "Herpes simplex virus 1 & 2 Ab.IgG & IgM panel"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "POS",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Positive"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:a8a891a0-2023-469a-b691-5d03ed717597",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702963040827",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "19550-3",
+                            "system": "http://loinc.org",
+                            "display": "Methadone [Presence] in Urine by Screen method"
+                        }
+                    ]
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "NEG",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Negative"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:b5971f1b-3f53-4866-b697-30268feb6eb8",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702963097353",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP263718-1",
+                            "system": "http://loinc.org",
+                            "display": "HEDIS 2018 Value Set - Alcohol Screening"
+                        }
+                    ]
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "NEG",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Negative"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:abe09de7-76df-4c33-aead-76b29647e05a",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702963303716",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP14144-7",
+                            "system": "http://loinc.org",
+                            "display": "Free T4 & TSH panel"
+                        }
+                    ]
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "N",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Normal"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:65ff7bd3-ac71-4c86-bf96-7db01bf43d9c",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "cfsb1702963394745",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "LP31696-5",
+                            "system": "http://loinc.org",
+                            "display": "Vitamin D"
+                        }
+                    ]
+                },
+                "interpretation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "L",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                                "display": "Low"
+                            }
+                        ]
+                    }
+                ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "laboratory",
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "display": "Laboratory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:ad5cd251-eaf7-4dc6-b837-728074f5ec25",
+            "request": {
+                "method": "POST",
+                "url": "Procedure"
+            },
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "cfsb1702963874723",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "completed",
+                "code": {
+                    "coding": [
+                        {
+                            "code": "412712007",
+                            "system": "http://snomed.info/sct",
+                            "display": "Referral to sexually transmitted infections clinic"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:60326950-22c2-4a45-922e-fddf00818a52",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703654787857",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "374544006",
+                                "system": "http://snomed.info/sct",
+                                "display": "Prazosin hydrochloride 2 mg oral capsule"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:44fb27a2-3e75-4e3f-bd96-bcf289190f1f",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703654851417",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "765941009",
+                                "system": "http://snomed.info/sct",
+                                "display": "Venlafaxine (as venlafaxine hydrochloride) 75 mg prolonged-release oral capsule"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:0c0330dc-e8e4-4df9-8b6f-6a08276447fd",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703654909722",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "783381001",
+                                "system": "http://snomed.info/sct",
+                                "display": "Sertraline (as sertraline hydrochloride) 50 mg oral tablet"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:b2830d8e-c1ae-4437-87cf-94d29d6ea564",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703654981680",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "321285002",
+                                "system": "http://snomed.info/sct",
+                                "display": "Hydroxyzine hydrochloride 10 mg oral tablet"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:a4640cdf-cd29-4d2c-9900-912b46b56615",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703655047724",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "419484002",
+                                "system": "http://snomed.info/sct",
+                                "display": "Buspirone hydrochloride"
+                            }
+                        ]
+                    }
+                },
+                "dosage": [
+                    {
+                        "text": "Buspar (buspirone) 30 mg"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:dce5dbaf-d403-4783-8521-185a29ebe09f",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703655231466",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "377286005",
+                                "system": "http://snomed.info/sct",
+                                "display": "Hydrocodone bitartrate 5 mg and paracetamol 325 mg oral tablet"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:4740ad42-5b90-40ae-b8d6-fe804e09da19",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703655302566",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "374621004",
+                                "system": "http://snomed.info/sct",
+                                "display": "Baclofen 20 mg oral tablet"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:1e16d13c-9b96-4f65-be30-c5c5f2410d40",
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            },
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "id": "cfsb1703655361995",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "recorded",
+                "medication": {
+                    "concept": {
+                        "coding": [
+                            {
+                                "code": "375982001",
+                                "system": "http://snomed.info/sct",
+                                "display": "Estazolam 1 mg oral tablet"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:a5f12c40-db27-4f9b-94d7-d2cd896373d3",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "cfsb1704675206790",
+                "subject": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "code": "230470007",
+                            "system": "http://snomed.info/sct",
+                            "display": "Episodic tension-type headache"
+                        }
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "code": "active",
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e0fa1e14-0df4-42c9-bef5-a30246024f73",
+            "request": {
+                "method": "POST",
+                "url": "FamilyMemberHistory"
+            },
+            "resource": {
+                "resourceType": "FamilyMemberHistory",
+                "id": "cfsb1706071306525",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "completed",
+                "relationship": {
+                    "coding": [
+                        {
+                            "code": "FAMMEMB",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                            "display": "family member"
+                        }
+                    ]
+                },
+                "condition": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "26416006",
+                                    "system": "http://snomed.info/sct",
+                                    "display": "Drug abuse"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:6253ecf5-7c84-44d8-8ac5-2eb3502dcc4e",
+            "request": {
+                "method": "POST",
+                "url": "FamilyMemberHistory"
+            },
+            "resource": {
+                "resourceType": "FamilyMemberHistory",
+                "id": "cfsb1706758813760",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "completed",
+                "relationship": {
+                    "coding": [
+                        {
+                            "code": "FAMMEMB",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                            "display": "family member"
+                        }
+                    ]
+                },
+                "condition": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "15167005",
+                                    "system": "http://snomed.info/sct",
+                                    "display": "Alcohol abuse"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e06a81d1-57ad-40d5-93eb-8e773a2e1b51",
+            "request": {
+                "method": "POST",
+                "url": "FamilyMemberHistory"
+            },
+            "resource": {
+                "resourceType": "FamilyMemberHistory",
+                "id": "cfsb1706759347553",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "completed",
+                "relationship": {
+                    "coding": [
+                        {
+                            "code": "FAMMEMB",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                            "display": "family member"
+                        }
+                    ]
+                },
+                "condition": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "44054006",
+                                    "system": "http://snomed.info/sct",
+                                    "display": "Type 2 diabetes mellitus"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:0f532be2-3c72-4f36-9ef5-91c53712fe25",
+            "request": {
+                "method": "POST",
+                "url": "FamilyMemberHistory"
+            },
+            "resource": {
+                "resourceType": "FamilyMemberHistory",
+                "id": "cfsb1706759575898",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "completed",
+                "relationship": {
+                    "coding": [
+                        {
+                            "code": "FAMMEMB",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                            "display": "family member"
+                        }
+                    ]
+                },
+                "condition": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "73430006",
+                                    "system": "http://snomed.info/sct",
+                                    "display": "Sleep apnoea"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:54695702-4611-4a9d-ab81-ba871ad8cc65",
+            "request": {
+                "method": "POST",
+                "url": "FamilyMemberHistory"
+            },
+            "resource": {
+                "resourceType": "FamilyMemberHistory",
+                "id": "cfsb1706759698120",
+                "patient": {
+                    "reference": "urn:uuid:ed80acfd-b183-4e97-9c2d-6bf7e87fde13"
+                },
+                "status": "completed",
+                "relationship": {
+                    "coding": [
+                        {
+                            "code": "FAMMEMB",
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                            "display": "family member"
+                        }
+                    ]
+                },
+                "condition": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "363349007",
+                                    "system": "http://snomed.info/sct",
+                                    "display": "Malignant tumour of stomach"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

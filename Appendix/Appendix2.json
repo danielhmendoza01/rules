@@ -1,0 +1,10 @@
+{
+    "groupID": "Opiates screen, urine (positive)",
+    "codes": [
+        {
+            "system": "http://loinc.org",
+            "code": "19301-1",
+            "confidence": 1
+        }
+    ]
+}
